@@ -116,6 +116,7 @@ $.ajax('https://rakeshkp.in/ekart/api/get_bank.php', {
                 },
                 complete: function (jqXhr, textStatus, errorMessage) {
                     console.log(errorMessage);
+					  $("#contents").empty();
                        for(var i=0;i<len;i++){
                            $("#contents").append(cards[i]);
                        }
