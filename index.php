@@ -65,7 +65,7 @@
 
 
 	
-$.ajax('http://rakeshkp.in/ekart/api/get_bank.php', {
+$.ajax('https://rakeshkp.in/ekart/api/get_bank.php', {
                 type: 'POST',  // http method
                 data: { products:'products',name:name,city:city },  // data to submit
                 success: function (data, status, xhr) {
