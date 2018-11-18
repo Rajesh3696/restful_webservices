@@ -132,6 +132,90 @@ $.ajax('https://rakeshkp.in/ekart/api/get_bank.php', {
 
 }
 
+
+
+function calVal1(){
+		     var ifsc=document.getElementById("ifsc").value;
+		 
+
+	
+
+
+
+	
+$.ajax('https://rakeshkp.in/ekart/api/get_bank1.php', {
+                type: 'POST',  // http method
+                data: { products:'products',ifsc:ifsc },  // data to submit
+                success: function (data, status, xhr) {
+                    len=Object.keys(data).length;
+                    console.log(data);
+                    for(var i=0;i<Object.keys(data).length;i++) {
+
+                         names[i]=data[i]['name'];
+                            citys[i]=data[i]['city'];
+                            address[i]=data[i]['address'];
+							branch[i]=data[i]['branch'];
+							id[i]=data[i]['id'];
+                            ifsc[i]=data[i]['ifsc'];
+                            state[i]=data[i]['state'];
+                            address[i]=data[i]['address'];
+						
+
+					cards[i]="<table class=\"ui celled table\">\n" +
+                        "  <thead>\n" +
+                        "    <tr><th>Name</th>\n" +
+                        "    <th>Bank Id</th>\n" +
+
+                        "    <th>Branch</th>\n" +
+                        "    <th>IFSC</th>\n" +
+                        "    <th>City</th>\n" +
+                        "    <th>State</th>\n" +
+                        "    <th>Address</th>\n" +
+
+                        "  </tr></thead>\n" +
+                        "  <tbody>\n" +
+                        "    <tr>\n" +
+                        "      <td data-label=\"Name\">"+names[i]+"</td>\n" +
+                        "      <td data-label=\"Name\">"+id[i]+"</td>\n" +
+                        "      <td data-label=\"Name\">"+branch[i]+"</td>\n" +
+                        "      <td data-label=\"Name\">"+ifsc[i]+"</td>\n" +
+                        "      <td data-label=\"Name\">"+citys[i]+"</td>\n" +
+                        "      <td data-label=\"Name\">"+state[i]+"</td>\n" +
+                        "      <td data-label=\"Name\">"+address[i]+"</td>\n" +
+
+                        "    </tr>\n" +
+                        "  </tbody>\n" +
+                        "</table>";
+
+
+
+                       
+
+                    }
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                    console.log('error');
+                },
+                complete: function (jqXhr, textStatus, errorMessage) {
+                    console.log(errorMessage);
+					  $("#contents1").empty();
+                       for(var i=0;i<len;i++){
+                           $("#contents1").append(cards[i]);
+                       }
+
+                }
+            });
+
+
+
+
+
+            
+
+}
+
+
+
     </script>
 </head>
 <body class="landing" >
@@ -160,6 +244,27 @@ $.ajax('https://rakeshkp.in/ekart/api/get_bank.php', {
  <button class="ui button" onclick="calVal()" >Submit</button>
 
 <div id="contents">
+
+</div>
+
+
+<h5>Fetch using IFSC </h5>
+<form class="ui fluid form">
+  <div class="field">
+    <input type="text" placeholder="IFSC CODE" id="ifsc">
+    <div class="ui pointing label">
+      
+    </div>
+  </div>
+
+ 
+</form>
+
+
+
+ <button class="ui button" onclick="calVal1()" >Submit</button>
+
+<div id="contents1">
 
 </div>
 
