@@ -1,12 +1,8 @@
 <!DOCTYPE HTML>
-<!--
-	Retrospect by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+
 <html>
 <head>
-    <title>Ekart</title>
+    <title>Rajesh</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-signin-client_id" content="1050625197148-sjajlgjub5bifrtf67h94cfchiudjq3n.apps.googleusercontent.com">
